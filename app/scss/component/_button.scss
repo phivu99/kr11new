@@ -1,0 +1,135 @@
+@use '../abstracts/' as *;
+
+/* button 
+--------------------------------------------------*/
+.sc-button {
+    display      : inline-block;
+    background: rgba(246, 246, 246, 0.1);
+    box-sizing   : border-box;
+    padding         : 8px 16px;
+    border-radius: 0px;
+    @include transition3;
+    span {
+        color             : #fff;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        position          : relative;
+        // text-transform    : capitalize;
+        @include transition3;
+    }
+    &:hover,
+    &.active {
+        border-color: transparent;
+        outline: 0 none;
+    }
+}
+
+.sc-button.btn-2:hover {
+    background: $bg-color;
+}
+
+.btn-action {
+    padding      : 18px 32.5px 16px;
+    border-radius: 4px;
+    transition: color 0.4s linear;
+    position: relative;
+    overflow: hidden;
+    display : inline-block;
+    background: $bg-color;
+    
+    span {
+        color: var(--primary-color2);
+        z-index: 9;
+        font-weight       : 600;
+        font-size         : 18px;
+        position: relative;
+        text-transform: uppercase;
+        @include transition3;
+    }
+    &:hover {
+        border: 0px solid transparent;
+        transition        : all 0s ease;
+        z-index: 9;
+        span {
+            color: var(--primary-color);
+            z-index: 999;
+            @include transition3;
+        }
+        &::before {
+            -webkit-animation: criss-cross-left 0.8s both;
+            animation: criss-cross-left 0.8s both;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+        &::after {
+            -webkit-animation: criss-cross-right 0.8s both;
+            animation: criss-cross-right 0.8s both;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        // z-index: -1;
+        top: 50%;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: var(--primary-color2);
+        border-radius: 50%;
+    }
+    &::before {
+        left: -20px;
+        transform: translate(-50%, -50%);
+    }
+    &::after {
+        right: -20px;
+        transform: translate(50%, -50%);
+    }
+}
+
+.btn-action.btn-3 {
+    border: 0px solid transparent;
+    background-color: #6001D31A;
+    span {
+        color: var(--primary-color3);
+    }
+    &:hover {
+        span {
+            color: var(--primary-color);
+        }
+    }
+    &::before,
+    &::after {
+        background-color: var(--primary-color3);
+    }
+}
+
+.btn-action.btn-4 {
+    border: 0px solid transparent;
+    background-color: #FFFFFF1A;
+    span {
+        color: var(--primary-color);
+    }
+    &:hover {
+        span {
+            color: var(--primary-color);
+        }
+    }
+    &::before,
+    &::after {
+        background-color: var(--primary-color3);
+    }
+}
+    
+
+.sc-button span {
+    color: #fff;
+}
+
+.btn-style {
+    padding: 20px 40px;
+}

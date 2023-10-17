@@ -1,0 +1,292 @@
+@use '../abstracts/' as *;
+
+
+// side bar
+.side-bar {
+    padding: 0;
+    margin-top: -77px;
+    .title-sidebar {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 43px;
+    }
+    .widget {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(238, 238, 238, 0.2);
+        box-shadow: 0px 8px 25px rgba(57, 76, 98, 0.12);
+        border-radius: 16px;
+    }
+    .widget-price {
+        padding: 8px 0 0;
+        margin-bottom: 39px;
+        .box-icon {
+            border-bottom: 1px solid rgba(238, 238, 238, 0.2);
+            padding: 18px 26px 15px;
+            .icon {
+                margin-right: 15px;
+            }
+            .content {
+                padding-top: 2px;
+                .title-icon {
+                    margin-bottom: 16px;
+                }
+                .sc-button {
+                    border-radius: 8px;
+                    padding: 6px 12px 5px;
+                    span {
+                        color: $color-3;
+                        font-weight: 600;
+                        font-size: 10px;
+                    } 
+                }
+            }
+            &.box-tel {
+                padding: 18px 26px 17px;
+            }
+            &.box-link {
+                padding: 17px 24px 14px;
+                align-items: center;
+                .icon {
+                    margin-right: 12px;
+                }
+            }
+            &.box-social {
+                padding: 17px 24px 14px;
+                .icon {
+                    margin-right: 23px;
+                }
+            }
+            &.box-clock {
+                padding: 17px 24px 16px;
+                .title-today {
+                    margin-right: 13px;
+                }
+                .icon {
+                    margin-right: 13px;
+                }
+            }
+        }
+        .booking-box {
+            padding: 28px 23px 24px;
+            h4 {
+                margin-bottom: 22px;
+            }
+            fieldset {
+                position: relative;
+                margin-bottom: 16px;
+                p {
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    position: absolute;
+                    color:  #818089;
+                    z-index: 99;
+                    top: 11px;
+                    left: 20px;
+                }
+            }
+            input {
+                background: #201B20;
+                position: relative;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 21px;
+                padding: 30px 16px 11px 18px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                &:focus {
+                    border-color: $color-3;
+                }
+            }
+
+            [type="date"]::after {
+                content: "\f073";
+                font-family: "Font Awesome 5 Pro";
+                position: absolute;
+                right: 16px;
+                margin-top: -17px;
+                z-index: 0;
+                font-size: 21px;
+                font-weight: 400;
+                color: #818089;
+            }
+
+            [type="time"]::after{
+                content: "\f017";
+                font-family: "Font Awesome 5 Pro";
+                position: absolute;
+                right: 16px;
+                margin-top: -17px;
+                z-index: 0;
+                font-size: 21px;
+                font-weight: 400;
+                color: #818089;
+            }
+            [type="date"]::-webkit-inner-spin-button,
+            [type="time"]::-webkit-inner-spin-button {
+                display: none;
+            }
+            
+            [type="date"]::-webkit-calendar-picker-indicator,
+            [type="time"]::-webkit-calendar-picker-indicator {
+                opacity: 1;
+                color: #fff;
+                position: relative;
+                z-index: 999;
+                margin-top: -16px;
+                opacity: 0;            
+            }  
+            .time {
+                fieldset {
+                    width: 50%;
+                    &.one {
+                        padding-right: 5px;
+                    }
+                    &.two {
+                        padding-left: 5px;
+                        p {
+                            left: 25px;
+                        }
+                    }
+                }
+            }
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                // opacity: 0;
+                padding: 30px 15px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                opacity: 0;
+            }
+       
+            .number-wrap::after,
+            .number-wrap::before {
+                position: absolute;
+                right: 0px;
+                padding: 6px 14px;
+                font-size: 20px;
+                pointer-events: none;
+                background: $color-3;
+                cursor: pointer;
+            }
+            
+            .number-wrap::after {
+                color: rgba(255, 255, 255, 0.7);
+                content: "\f106";
+                font-family: 'Font Awesome 5 Pro';
+                top: 0px;
+                z-index: 8;
+                border-radius: 0px 7px 0px 0px;
+            }
+            
+            .number-wrap::before {
+                color: rgba(255, 255, 255, 0.7);
+                content: "\f107";
+                font-family: 'Font Awesome 5 Pro';
+                bottom: 0px;
+                z-index: 9;
+                border-radius: 0px 0px 7px 0px;
+            }
+            .form-booking {
+                margin-bottom: 25px;
+            }
+            .count-price {
+                margin-bottom: 36px;
+                .box-price {
+                    margin-bottom: 27px;
+                    .title-one {
+                        margin-right: 6px;
+                    }
+                    p {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: unset;
+                        color: #818089;
+                    }
+                    &:nth-child(3) {
+                        margin-bottom: 23px;
+                    }
+                  
+                }
+            }
+            .button {
+                border: 0;
+                padding: 13px 0 13px;
+                width: 100%;
+                border-radius: 10px;
+                background: $bg-color;
+                @include transition3;
+                span {
+                    text-transform: unset;
+                    font-size: 16px;
+                    @include transition3;
+                }
+                &:hover {              
+                    background: linear-gradient(53.06deg, #E6902B -0.31%, #A91B3D 99.69%);            
+                }
+            }
+        }
+    }
+    .widget-hosted {
+        padding: 24px 23px;
+        h3 {
+            margin-bottom: 22px;
+        }
+        .box-author {
+            margin-bottom: 16px;
+            .image {
+                img {
+                    border-radius: 10px;
+                }
+                margin-right: 16px;
+            }
+            .content {
+                padding-top: 5px;
+                margin-right: 18px;
+                h4 {
+                    margin-bottom: 7px;
+                }
+                p {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #908E8E;
+                }
+            }
+            .icon-check {
+                margin-top: 2px;
+            }
+        }
+        .texts {
+            margin-bottom: 28px;
+        }
+        .box-icon {
+            margin-bottom: 24px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 4px;
+                line-height: 47px;
+                background: $color-5;
+                text-align: center;
+                margin-right: 17px;
+            }
+            .content {
+                h6 {
+                    margin-top: 4px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .swiper-container {
+        margin-bottom: 40px;
+        img {
+            border-radius: 10px;       
+        }
+    }
+}
+
